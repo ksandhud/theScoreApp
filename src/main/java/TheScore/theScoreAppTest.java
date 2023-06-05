@@ -88,7 +88,7 @@ public class theScoreAppTest {
         cancelButton.click();
     }
 
-        @Test
+        @Test (dependsOnMethods={"gettingStarted"})
         public void openATeam() {
             //Test 1: open a league team and verify the expected page opens correctly
             WebElement searchBar = driver.findElement(By.id("com.fivemobile.thescore:id/search_bar_text_view"));
@@ -111,7 +111,7 @@ public class theScoreAppTest {
             Assert.assertEquals(actualTeamName, expectedTeamName);
         }
 
-        @Test
+        @Test (dependsOnMethods={"openATeam"})
         public void openASubTab() {
         //Test 2: open a syb tab, verify you are on the correct tab and verify back navigation returns to the previous screen
         WebElement teamStats = driver.findElement(AppiumBy.accessibilityId("Team Stats"));
